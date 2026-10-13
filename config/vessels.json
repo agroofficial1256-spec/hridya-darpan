@@ -1,0 +1,70 @@
+{
+  "_comment": "Single source of truth for vessel identity + overall CAD. Backend (Python/TS) and frontend read this file so model outputs, mesh names, and UI labels never drift apart. Add a new vessel/structure here first, then wire its mesh + model.",
+  "targets": [
+    {
+      "id": "cad",
+      "label": "Overall CAD",
+      "description": "Presence of significant coronary artery disease (>=50% stenosis in any major vessel).",
+      "sourceColumn": "Cath",
+      "positiveValue": "CAD",
+      "isOverall": true,
+      "meshId": "heart",
+      "color": "#64748b"
+    },
+    {
+      "id": "lad",
+      "label": "LAD",
+      "fullName": "Left Anterior Descending",
+      "description": "Supplies blood to the front of the heart.",
+      "sourceColumn": "LAD",
+      "positiveValue": "Stenotic",
+      "isOverall": false,
+      "meshId": "artery-lad",
+      "color": "#38bdf8"
+    },
+    {
+      "id": "lcx",
+      "label": "LCX",
+      "fullName": "Left Circumflex",
+      "description": "Supplies blood to the side and back of the heart.",
+      "sourceColumn": "LCX",
+      "positiveValue": "Stenotic",
+      "isOverall": false,
+      "meshId": "artery-lcx",
+      "color": "#a78bfa"
+    },
+    {
+      "id": "rca",
+      "label": "RCA",
+      "fullName": "Right Coronary Artery",
+      "description": "Supplies blood to the right side and bottom of the heart.",
+      "sourceColumn": "RCA",
+      "positiveValue": "Stenotic",
+      "isOverall": false,
+      "meshId": "artery-rca",
+      "color": "#fb923c"
+    }
+  ],
+  "leakageColumns": ["LAD", "LCX", "RCA", "Cath"],
+  "encoding": {
+    "yesNoMap": { "Y": 1, "N": 0 },
+    "sexMap": { "Male": 1, "Fmale": 0 },
+    "vhdMap": { "N": 0, "mild": 1, "Moderate": 2, "Severe": 3 },
+    "bbbCategories": ["LBBB", "RBBB"],
+    "specialColumns": { "sex": "Sex", "bbb": "BBB", "vhd": "VHD" }
+  },
+  "riskColorScale": {
+    "low": { "max": 0.33, "color": "#22c55e" },
+    "medium": { "max": 0.66, "color": "#eab308" },
+    "high": { "max": 1.01, "color": "#ef4444" }
+  },
+  "featureGroups": {
+    "demographics": ["Age", "Weight", "Length", "Sex", "BMI", "FH", "Obesity", "Current Smoker", "EX-Smoker"],
+    "history": ["DM", "HTN", "CRF", "CVA", "Airway disease", "Thyroid Disease", "CHF", "DLP"],
+    "vitals": ["BP", "PR", "Edema", "Weak Peripheral Pulse", "Lung rales", "Systolic Murmur", "Diastolic Murmur"],
+    "symptoms": ["Typical Chest Pain", "Dyspnea", "Function Class", "Atypical", "Nonanginal", "Exertional CP", "LowTH Ang"],
+    "ecg": ["Q Wave", "St Elevation", "St Depression", "Tinversion", "LVH", "Poor R Progression", "BBB"],
+    "labs": ["FBS", "CR", "TG", "LDL", "HDL", "BUN", "ESR", "HB", "K", "Na", "WBC", "Lymph", "Neut", "PLT"],
+    "echo": ["EF-TTE", "Region RWMA", "VHD"]
+  }
+}
