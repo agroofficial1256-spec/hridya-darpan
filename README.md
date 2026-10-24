@@ -7,6 +7,15 @@ probability (LAD, LCX, RCA) from clinical inputs, and maps the result onto a
 rotatable 3D heart with live-colored arteries, SHAP-driven explanations, and
 a patient input dashboard.
 
+<img width="1366" height="768" alt="step 1 Upload ECG Lab report" src="https://github.com/user-attachments/assets/ad6c5937-df2b-4c90-84ba-5cbceb661e1e" />
+<img width="1366" height="768" alt="Step 2 Add your ECG report" src="https://github.com/user-attachments/assets/c80cd41f-f0f8-4035-83b0-7a6c19a8c9b6" />
+<img width="1366" height="768" alt="Step 3 Wait for the AI gateway to fetch the readings" src="https://github.com/user-attachments/assets/e71ed409-3efa-460d-98d5-a477addea166" />
+<img width="1366" height="768" alt="step 4 your values will be fetched and automatically filled" src="https://github.com/user-attachments/assets/aa21051e-4892-4ca7-8c33-8cfe400fd2c1" />
+
+
+
+
+
 > ⚠️ **For decision support / educational purposes only. Not a substitute
 > for formal diagnostic imaging.** This banner is also shown persistently in
 > the app itself.
